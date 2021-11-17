@@ -11,7 +11,7 @@ xhttp.onreadystatechange = function(){
         langDocument = JSON.parse(this.responseText);
         processLangDocument();
         processCurrencyDocument();
-        processDateTimes();
+        
     }
 };
 function switchLanguage(language){
@@ -26,16 +26,7 @@ function processLangDocument(){
         if(langDocument[key]) value.innerText = langDocument[key];
     });
 }
-function processDateTimes() {
-    var tags = document.querySelectorAll('span');
-    Array.from(tags).forEach(function(value, index) {
-        var key  = value.dataset.picker;
-        if(!key) return;
-        var val = new Date();
-        val = val.toLocaleString(langDocument['LocaleFormat']);
-        value.innerText = val;
-    });
-}
+
 function processCurrencyDocument() {
     var tags = document.querySelectorAll('input');
     Array.from(tags).forEach(function(value, index) {
