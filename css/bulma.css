@@ -1,5 +1,4 @@
-/*! bulma.io v0.9.3 | MIT License | github.com/jgthms/bulma */
-/* Bulma Utilities */
+
 .button, .input, .textarea, .select select, .file-cta,
 .file-name, .pagination-previous,
 .pagination-next,
@@ -125,7 +124,7 @@ fieldset[disabled] .pagination-ellipsis {
 }
 
 .delete::before, .modal-close::before, .delete::after, .modal-close::after {
-  background-color: white;
+  background-color: rgb(27, 25, 25);
   content: "";
   display: block;
   left: 50%;
@@ -145,7 +144,7 @@ fieldset[disabled] .pagination-ellipsis {
   width: 2px;
 }
 
-.delete:hover, .modal-close:hover, .delete:focus, .modal-close:focus {
+.delete:hover, .modal-close:hover{
   background-color: rgba(10, 10, 10, 0.3);
 }
 
@@ -173,11 +172,9 @@ fieldset[disabled] .pagination-ellipsis {
 
 .is-large.delete, .is-large.modal-close {
   height: 32px;
-  max-height: 32px;
-  max-width: 32px;
-  min-height: 32px;
-  min-width: 32px;
+  right: 50px;
   width: 32px;
+  top: 15px;
 }
 
 .button.is-loading::after, .loader, .select.is-loading::after, .control.is-loading::after {
@@ -358,7 +355,7 @@ body {
   color: #4a4a4a;
   font-size: 1em;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 0,1;
 }
 
 a {
@@ -1893,9 +1890,11 @@ fieldset[disabled] .button {
 
 .container {
   flex-grow: 1;
-  margin: 0 auto;
-  position: relative;
-  width: auto;
+  margin: 10px;
+  
+  
+  position: center;
+  /* width: 500px; */
 }
 
 .container.is-fluid {
@@ -1908,6 +1907,7 @@ fieldset[disabled] .button {
 @media screen and (min-width: 1024px) {
   .container {
     max-width: 960px;
+    position: center;
   }
 }
 
@@ -2449,13 +2449,14 @@ div.icon-text {
 .progress {
   -moz-appearance: none;
   -webkit-appearance: none;
+  position: relative;
+  left: 38%;
   border: none;
   border-radius: 9999px;
   display: block;
-  height: 1rem;
   overflow: hidden;
   padding: 0;
-  width: 100%;
+  width: 25%;
 }
 
 .progress::-webkit-progress-bar {
@@ -4225,6 +4226,7 @@ fieldset[disabled] .select select:hover {
   display: block;
   font-size: 1rem;
   font-weight: 700;
+  margin-bottom: 10px;
 }
 
 .label:not(:last-child) {
@@ -5299,15 +5301,15 @@ button.dropdown-item.is-active {
   max-height: calc(100vh - 160px);
   overflow: auto;
   position: relative;
-  width: 100%;
+  
 }
 
 @media screen and (min-width: 769px) {
   .modal-content,
   .modal-card {
-    margin: 0 auto;
+    
     max-height: calc(100vh - 40px);
-    width: 640px;
+    width: 100%;
   }
 }
 
@@ -10017,6 +10019,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 
 .is-size-4 {
   font-size: 1.5rem !important;
+  
 }
 
 .is-size-5 {
@@ -11699,10 +11702,10 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
     padding: 9rem 4.5rem;
   }
 }
-
+/* размер поля */
 @media screen and (min-width: 769px), print {
   .hero.is-large .hero-body {
-    padding: 18rem 6rem;
+    padding: 8rem 6rem;
   }
 }
 
@@ -11800,7 +11803,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
     padding: 9rem 4.5rem;
   }
   .section.is-large {
-    padding: 18rem 6rem;
+    padding: 8rem 6rem;
   }
 }
 
@@ -11808,4 +11811,3 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem;
 }
-/*# sourceMappingURL=bulma.css.map */
