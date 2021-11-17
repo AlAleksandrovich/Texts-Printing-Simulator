@@ -3,23 +3,26 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Тренажер печати</title>
-
-    <link href="keyboard.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <title data-langkey="tab">Тренажер печати</title>
+    <link rel="shortcut icon" href="keyboard.png" type="image/png">
     <script src="js/code.js" defer></script>
     <link rel="stylesheet" href="css/bulma.css">
     <link rel="stylesheet" href="css/style.css">
-
+    <link rel="stylesheet" href="css/javascript.localization.css" type="text/css" />
 </head>
-<div class="modal">
 
+<div class="modal">
+   
+    
     <div class="modal-content has-background-white">
-        <h3 class="is-size-4"> Результат </h3>
+
+        <h3 class="is-size-4" data-langkey="Results">Results</h3>
         <table class="table">
             <thead>
                 <tr>
-                    <th> Дата</th>
-                    <th> Ошибки </th>
+                    <th data-langkey="Dates"> Date</th>
+                    <th data-langkey="Error"> Errors</th>
                 </tr>
             </thead>
             <tbody>
@@ -29,40 +32,268 @@
         </table>
         <div>
             <!-- результаты игры(модалка) -->
+            <!-- <div class="overlay" id="overlay"></div> -->
         </div>
         <button class="modal-close is-large" aria-label="close"></button>
+
     </div>
+
 </div>
+
 
 <body class="has-background-black-bis">
 
-    <section class="hero is-primary is-large">
+    <section class="hero is-info is-large">
+
         <div class="hero-head container">
-            <h1 class="label is-size-3 has-text-white promo"> Учимся печатать в слепую</h1>
-
+            <h1 class="label is-size-3 has-text-white promo" data-langkey="head"> Texts Printing Simulator</h1>
+            <div class="lng" id='languages'>
+                <img id="btn-ru" onclick="afterr()" src='images/RUS_icon.png' class='language' data-lang='russian' alt='Russia Flag'
+                    width="25px" />
+                <img id="btn-en" onclick="before()" src="images/ENG_icon.png" class='language' data-lang='english' alt='GB Flag'
+                    width="25px" />
+            </div>
             <div class="error-panel is-hidden">
-                <h3 class="label is-size-4 has-text-link has-text-centered">Ошибки</h3>
+                <!-- панель скрыта до нажатия Ввод -->
+
+                <h3 class="label is-size-4 has-text-white has-text-centered" data-langkey="Errors">Errors</h3>
                 <progress id="prog" class="progress is-danger" value="0" max="10"> </progress>
+                <!-- бегунок ошибок -->
 
             </div>
 
         </div>
 
-        <div class="hero-body has-background-black-bis main-board">
+        <div class="hero-body has-background-grey-dark main-board">
             <div id="columns">
-                <h3 class="label is-size-2 has-text-white  has-text-centered begin anim-elem ">Press Enter</h3>
-                <div class="buttons columns is-half is-centered "></div>
-                <!--это кнопки с буквами-->
-
+                <h3 class="text-typing begin" data-langkey="start">Press Enter</h3>
+                <div class="buttons columns is-centered "></div>
+                <!--кнопки с буквами-->
                 <!-- здесь будет основная отрисовка -->
-
             </div>
 
         </div>
-
+        <div class="keyboard">
+            <div class="keyboard__row keyboard__row--h1">
+                <div data-key="27" class="key--word">
+                    <span>esc</span>
+                </div>
+                <div data-key="112" class="key--fn">
+                    <span>F1</span>
+                </div>
+                <div data-key="113" class="key--fn">
+                    <span>F2</span>
+                </div>
+                <div data-key="114" class="key--fn">
+                    <span>F3</span>
+                </div>
+                <div data-key="115" class="key--fn">
+                    <span>F4</span>
+                </div>
+                <div data-key="116" class="key--fn">
+                    <span>F5</span>
+                </div>
+                <div data-key="117" class="key--fn">
+                    <span>F6</span>
+                </div>
+                <div data-key="118" class="key--fn">
+                    <span>F7</span>
+                </div>
+                <div data-key="119" class="key--fn">
+                    <span>F8</span>
+                </div>
+                <div data-key="120" class="key--fn">
+                    <span>F9</span>
+                </div>
+                <div data-key="121" class="key--fn">
+                    <span>F10</span>
+                </div>
+                <div data-key="122" class="key--fn">
+                    <span>F11</span>
+                </div>
+                <div data-key="123" class="key--fn">
+                    <span>F12</span>
+                </div>
+                <div data-key="n/a" class="key--word">
+                    <span>pwr</span>
+                </div>
+            </div>
+            <div class="keyboard__row">
+                <div class="key--double" data-key="192">
+                    <div>~</div>
+                    <div>`</div>
+                </div>
+                <div class="key--double" data-key="49">
+                    <div>!</div>
+                    <div>1</div>
+                </div>
+                <div class="key--double" data-key="50">
+                    <div>@</div>
+                    <div>2</div>
+                </div>
+                <div class="key--double" data-key="51">
+                    <div>#</div>
+                    <div>3</div>
+                </div>
+                <div class="key--double" data-key="52">
+                    <div>$</div>
+                    <div>4</div>
+                </div>
+                <div class="key--double" data-key="53">
+                    <div>%</div>
+                    <div>5</div>
+                </div>
+                <div class="key--double" data-key="54">
+                    <div>^</div>
+                    <div>6</div>
+                </div>
+                <div class="key--double" data-key="55">
+                    <div>&</div>
+                    <div>7</div>
+                </div>
+                <div class="key--double" data-key="56">
+                    <div>*</div>
+                    <div>8</div>
+                </div>
+                <div class="key--double" data-key="57">
+                    <div>(</div>
+                    <div>9</div>
+                </div>
+                <div class="key--double" data-key="48">
+                    <div>)</div>
+                    <div>0</div>
+                </div>
+                <div class="key--double" data-key="189">
+                    <div>_</div>
+                    <div>-</div>
+                </div>
+                <div class="key--double" data-key="187">
+                    <div>+</div>
+                    <div>=</div>
+                </div>
+                <div class="key--bottom-right key--word key--w4" data-key="8">
+                    <span>delete</span>
+                </div>
+            </div>
+            <div class="keyboard__row">
+                <div class="key--bottom-left key--word key--w4" data-key="9">
+                    <span>tab</span>
+                </div>
+                <div class="key--letter" data-char="Q" data-langkey="Q">Q</div>
+                <div class="key--letter" data-char="W" data-langkey="W">W</div>
+                <div class="key--letter" data-char="E" data-langkey="E">E</div>
+                <div class="key--letter" data-char="R" data-langkey="R">R</div>
+                <div class="key--letter" data-char="T" data-langkey="T">T</div>
+                <div class="key--letter" data-char="Y" data-langkey="Y">Y</div>
+                <div class="key--letter" data-char="U" data-langkey="U">U</div>
+                <div class="key--letter" data-char="I" data-langkey="I">I</div>
+                <div class="key--letter" data-char="O" data-langkey="O">O</div>
+                <div class="key--letter" data-char="P" data-langkey="P">P</div>
+                <div class="key--double" data-key="219" data-char="{[" data-langkey="[">
+                    <div>{</div>
+                    <div>[</div>
+                </div>
+                <div class="key--double" data-key="221" data-char="}]" data-langkey="]">
+                    <div>}</div>
+                    <div>]</div>
+                </div>
+                <div class="key--double" data-key="220" data-char="|\">
+                    <div>|</div>
+                    <div>\</div>
+                </div>
+            </div>
+            <div class="keyboard__row">
+                <div class="key--bottom-left key--word key--w5" data-key="20">
+                    <span>caps lock</span>
+                </div>
+                <div class="key--letter" data-char="A" data-langkey="A">A</div>
+                <div class="key--letter" data-char="S" data-langkey="S">S</div>
+                <div class="key--letter" data-char="D" data-langkey="D">D</div>
+                <div class="key--letter" data-char="F" data-langkey="F">F</div>
+                <div class="key--letter" data-char="G" data-langkey="G">G</div>
+                <div class="key--letter" data-char="H" data-langkey="H">H</div>
+                <div class="key--letter" data-char="J" data-langkey="J">J</div>
+                <div class="key--letter" data-char="K" data-langkey="K">K</div>
+                <div class="key--letter" data-char="L" data-langkey="L">L</div>
+                <div class="key--double" data-key="186" data-langkey=";">
+                    <div>:</div>
+                    <div>;</div>
+                </div>
+                <div class="key--double" data-key="222" data-langkey="'">
+                    <div>"</div>
+                    <div>'</div>
+                </div>
+                <div class="key--bottom-right key--word key--w5" data-key="13">
+                    <span>return</span>
+                </div>
+            </div>
+            <div class="keyboard__row">
+                <div class="key--bottom-left key--word key--w6" data-key="16">
+                    <span>shift</span>
+                </div>
+                <div class="key--letter" data-char="Z" data-langkey="Z">Z</div>
+                <div class="key--letter" data-char="X" data-langkey="X">X</div>
+                <div class="key--letter" data-char="C" data-langkey="C">C</div>
+                <div class="key--letter" data-char="V" data-langkey="V">V</div>
+                <div class="key--letter" data-char="B" data-langkey="B">B</div>
+                <div class="key--letter" data-char="N" data-langkey="N">N</div>
+                <div class="key--letter" data-char="M" data-langkey="M">M</div>
+                <div class="key--double" data-key="188" data-langkey=",">
+                    <div>&lt;</div>
+                    <div>,</div>
+                </div>
+                <div class="key--double" data-key="190" data-langkey=".">
+                    <div>&gt;</div>
+                    <div>.</div>
+                </div>
+                <div class="key--double" data-key="191">
+                    <div>?</div>
+                    <div>/</div>
+                </div>
+                <div class="key--bottom-right key--word key--w6" data-key="16-R">
+                    <span>shift</span>
+                </div>
+            </div>
+            <div class="keyboard__row keyboard__row--h3">
+                <div class="key--bottom-left key--word">
+                    <span>fn</span>
+                </div>
+                <div class="key--bottom-left key--word key--w1" data-key="17">
+                    <span>control</span>
+                </div>
+                <div class="key--bottom-left key--word key--w1" data-key="18">
+                    <span>option</span>
+                </div>
+                <div class="key--bottom-right key--word key--w3" data-key="91">
+                    <span>command</span>
+                </div>
+                <div class="key--double key--right key--space" data-key="32" data-char=" ">
+                    &nbsp;
+                </div>
+                <div class="key--bottom-left key--word key--w3" data-key="93-R">
+                    <span>command</span>
+                </div>
+                <div class="key--bottom-left key--word key--w1" data-key="18-R">
+                    <span>option</span>
+                </div>
+                <div data-key="37" class="key--arrow">
+                    <span>&#9664;</span>
+                </div>
+                <div class="key--double key--arrow--tall" data-key="38">
+                    <div>&#9650;</div>
+                    <div>&#9660;</div>
+                </div>
+                <div data-key="39" class="key--arrow">
+                    <span>&#9654;</span>
+                </div>
+            </div>
         </div>
+        </div>
+
     </section>
-    
+    <script src='js/localization.js'></script>
+    <script src='js/keyboard.js'></script>
+
 </body>
 
 </html>
