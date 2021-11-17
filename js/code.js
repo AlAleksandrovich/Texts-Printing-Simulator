@@ -15,21 +15,21 @@ const level_info = [
   {
     symbols: ["j","f","k","d"," "],
   },
-  {
-    symbols: ["f","d","s"," ","j","k","l"],
-  },
-  {
-    symbols: ["v","i","d"," ","c","e","f"],
-  },
-  {
-    symbols: ["x","s","w"," ","n","k","o"],
-  },
-  {
-    symbols: ["z","a","q"," ","m","l","p"],
-  },
-  {
-    symbols: ["b","g","t"," ","n", "h","u"],
-  },
+  // {
+  //   symbols: ["f","d","s"," ","j","k","l"],
+  // },
+  // {
+  //   symbols: ["v","i","d"," ","c","e","f"],
+  // },
+  // {
+  //   symbols: ["x","s","w"," ","n","k","o"],
+  // },
+  // {
+  //   symbols: ["z","a","q"," ","m","l","p"],
+  // },
+  // {
+  //   symbols: ["b","g","t"," ","n", "h","u"],
+  // },
 ];
 
 //получаем музыку которая нужна
@@ -118,7 +118,7 @@ function StartGame(e) {
     if (counts_right == 10) { //кол-во символов в уровне
       counts_right = 0;
       number_of_level++;
-      if (number_of_level == 6) {  //кол-во уровней игры
+      if (number_of_level == 1) {  //кол-во уровней игры
 
         modal.classList.add("is-active"); //вызов модального окна
         showResult(target_error, errors_count);
