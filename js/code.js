@@ -118,7 +118,7 @@ function StartGame(e) {
     if (counts_right == 10) { //кол-во символов в уровне
       counts_right = 0;
       number_of_level++;
-      if (number_of_level == 1) {  //кол-во уровней игры
+      if (number_of_level == 6) {  //кол-во уровней игры
 
         modal.classList.add("is-active"); //вызов модального окна
         showResult(target_error, errors_count);
